@@ -1,3 +1,7 @@
+// Este archivo guarda y lee la información del sitio en localStorage.
+// localStorage es como una memoria interna del navegador donde quedan
+// los productos, el carrito, los usuarios y la sesión actual.
+// Este archivo es la base de datos simple del proyecto.
 const STORAGE_KEYS = {
   products: 'ev_products',
   cart: 'ev_cart',
@@ -31,6 +35,9 @@ const IMAGE_PATHS = {
   KT001: 'assets/img/Kit_instalación_gas.png'
 };
 
+// Intenta convertir un texto guardado en un objeto JavaScript.
+// Si el texto está corrupto, devuelve null para evitar errores.
+// Este helper sirve porque localStorage guarda todo como texto, no como objetos.
 function safeParse(value) {
   try {
     return JSON.parse(value);
@@ -39,6 +46,8 @@ function safeParse(value) {
   }
 }
 
+// Corrige rutas de imagen para que todos los productos usen la misma ubicación correcta.
+// Esto ayuda a evitar que algunos productos muestren imágenes rotas por rutas incorrectas.
 function normalizeProducts(products) {
   if (!Array.isArray(products)) return [];
 
@@ -54,59 +63,77 @@ function normalizeProducts(products) {
   });
 }
 
+// Si no hay productos guardados, crea una lista inicial por defecto.
+// También revisa si las imágenes necesitan arreglarse.
 function ensureSeedProducts() {
+  // Lee lo que ya exista en el navegador para no perder información.
   const existing = safeParse(localStorage.getItem(STORAGE_KEYS.products));
 
+  // Si no existe nada o la información es inválida, se usa la lista base.
   if (!existing || !Array.isArray(existing) || existing.length === 0) {
     localStorage.setItem(STORAGE_KEYS.products, JSON.stringify(SEED_PRODUCTS));
     return;
   }
 
+  // Normaliza los productos para asegurar que todas las imágenes tengan la ruta correcta.
   const normalizedProducts = normalizeProducts(existing);
   const hasUpdatedImages = JSON.stringify(existing) !== JSON.stringify(normalizedProducts);
 
+  // Si hubo cambios en las rutas, se vuelven a guardar los datos corregidos.
   if (hasUpdatedImages) {
     localStorage.setItem(STORAGE_KEYS.products, JSON.stringify(normalizedProducts));
   }
 }
 
+// Devuelve la lista de productos disponibles.
+// Antes de devolverlos, vuelve a verificar que existan y estén bien formados.
 function getProducts() {
   ensureSeedProducts();
   return safeParse(localStorage.getItem(STORAGE_KEYS.products)) || [];
 }
 
+// Guarda la lista de productos actualizada en el navegador.
 function saveProducts(products) {
   localStorage.setItem(STORAGE_KEYS.products, JSON.stringify(products));
 }
 
+// Lee el carrito actual guardado del usuario.
 function getCart() {
   return safeParse(localStorage.getItem(STORAGE_KEYS.cart)) || [];
 }
 
+// Guarda el carrito actualizado para que permanezca aunque recargues la página.
 function saveCart(cart) {
   localStorage.setItem(STORAGE_KEYS.cart, JSON.stringify(cart));
 }
 
+// Lee todos los usuarios registrados.
 function getUsers() {
   return safeParse(localStorage.getItem(STORAGE_KEYS.users)) || [];
 }
 
+// Guarda la lista de usuarios para que persista entre visitas.
 function saveUsers(users) {
   localStorage.setItem(STORAGE_KEYS.users, JSON.stringify(users));
 }
 
+// Obtiene el usuario que inició sesión en ese momento.
 function getCurrentUser() {
   return safeParse(localStorage.getItem(STORAGE_KEYS.currentUser));
 }
 
+// Guarda la sesión actual del usuario para identificarlo en toda la página.
 function setCurrentUser(user) {
   localStorage.setItem(STORAGE_KEYS.currentUser, JSON.stringify(user));
 }
 
+// Cierra la sesión borrando la información del usuario actual.
 function removeCurrentUser() {
   localStorage.removeItem(STORAGE_KEYS.currentUser);
 }
 
+// Formatea un número como dinero chileno.
+// Ejemplo: 12000 -> "$12.000".
 function formatCurrency(value) {
   return new Intl.NumberFormat('es-CL', {
     style: 'currency',
@@ -115,10 +142,14 @@ function formatCurrency(value) {
   }).format(value);
 }
 
+// Busca un producto por su identificador único.
+// Esto permite encontrar rápidamente un producto sin recorrer todo el arreglo manualmente.
 function getProductById(productId) {
   return getProducts().find((item) => item.id === productId);
 }
 
+// Actualiza la cantidad visible del carrito en la interfaz.
+// Calcula la suma de todas las cantidades y la escribe en el badge del carrito.
 function updateCartBadge() {
   const count = getCart().reduce((sum, item) => sum + item.cantidad, 0);
   const badge = document.querySelector('#cart-count');

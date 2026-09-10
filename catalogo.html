@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body data-page="catalogo">
+
+    <!-- Este bloque se repite en varias páginas.
+         Es la barra de navegación que ayuda a moverse entre secciones.
+         Si lo cambiaras, todas las páginas podrían quedar con una forma distinta de navegar. -->
     <header class="site-header">
       <div class="container nav-wrap">
         <div class="brand" aria-label="Distribuidora de Gas El Volcán">
@@ -36,6 +40,10 @@
     </header>
 
     <main>
+
+      <!-- Esta sección sirve como encabezado del catálogo.
+           Aquí se ve el título de la página y se da una primera idea del contenido.
+           Es como el cartel que le dice al usuario en qué parte de la tienda está ahora. -->
       <section class="page-hero small-hero">
         <div class="container">
           <span class="eyebrow accent">Catálogo</span>
@@ -43,6 +51,9 @@
         </div>
       </section>
 
+      <!-- Aquí el usuario puede elegir cómo quiere ver los productos.
+           Puede filtrar por categoría o por precio para encontrar algo más rápido.
+           Esto ayuda mucho porque evita que el cliente tenga que revisar todos los productos uno por uno. -->
       <section class="catalog-filters">
         <div class="container filters-wrap">
           <div class="filter-card">
@@ -65,6 +76,9 @@
         </div>
       </section>
 
+      <!-- Aquí se muestran los productos que cumplen con los filtros.
+           Esta parte se llena con JavaScript, por eso no aparece escrita directamente en el HTML.
+           Si esta zona no se llenara, la página se vería vacía o incompleta. -->
       <section class="catalog-section">
         <div class="container">
           <div id="catalog-grid" class="product-grid"></div>
@@ -72,6 +86,8 @@
       </section>
     </main>
 
+    <!-- Este es el final de la página.
+         Se usa para mostrar información de la empresa y datos de contacto. -->
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>

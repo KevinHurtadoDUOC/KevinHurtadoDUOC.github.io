@@ -1,0 +1,85 @@
+﻿DOCUMENTO CSS - OPCIONES, COMANDOS Y EJEMPLOS
+
+BASE Y RESET
+
+box-sizing: border-box;                      Hace que padding y border se incluyan dentro del tamaño del elemento. Ejemplo: box-sizing: border-box;
+margin: 0 auto;                              Establece el espacio exterior del elemento. Ejemplo: margin: 0 auto;
+padding: 1rem 1.5rem;                        Establece el espacio interno del elemento. Ejemplo: padding: 1rem 1.5rem;
+width: 100%;                                 Define el ancho del elemento. Ejemplo: width: 100%;
+height: 240px;                               Define la altura del elemento. Ejemplo: height: 240px;
+min-width: 280px;                            Define un ancho mínimo. Ejemplo: min-width: 280px;
+max-width: 640px;                            Limita el ancho máximo del elemento. Ejemplo: max-width: 640px;
+min-height: 420px;                           Define una altura mínima. Ejemplo: min-height: 420px;
+max-height: 500px;                           Limita la altura máxima. Ejemplo: max-height: 500px;
+
+TIPOGRAFÍA Y TEXTO
+
+font-family: Arial, Helvetica, sans-serif;   Define la fuente. Ejemplo: font-family: Arial, Helvetica, sans-serif;
+font-size: 1.05rem;                          Ajusta el tamaño del texto. Ejemplo: font-size: 1.05rem;
+font-weight: 700;                            Define el grosor del texto. Ejemplo: font-weight: 700;
+line-height: 1.1;                            Ajusta la altura entre líneas para mejorar la legibilidad. Ejemplo: line-height: 1.1;
+letter-spacing: 0.04em;                      Ajusta el espacio entre letras. Ejemplo: letter-spacing: 0.04em;
+text-transform: uppercase;                   Transforma el texto a mayúsculas. Ejemplo: text-transform: uppercase;
+text-decoration: line-through;               Añade o elimina subrayados y tachados. Ejemplo: text-decoration: line-through;
+text-align: center;                          Alinea el texto horizontalmente. Ejemplo: text-align: center;
+white-space: nowrap;                         Controla si el texto se rompe o no. Ejemplo: white-space: nowrap;
+color: #111827;                            Establece el color del texto. Ejemplo: color: #111827;
+font: inherit;                               Permite definir varias propiedades de texto en una sola línea. Ejemplo: font: inherit;
+
+LAYOUT Y POSICIONAMIENTO
+
+display: flex;                               Define cómo se comporta un elemento en el layout. Ejemplo: display: flex;
+display: grid;                               Organiza elementos en una cuadrícula. Ejemplo: display: grid;
+display: inline-flex;                        Hace que el elemento se comporte como un contenedor flexible en línea. Ejemplo: display: inline-flex;
+flex-direction: column;                      Define si los elementos flex se ordenan en fila o columna. Ejemplo: flex-direction: column;
+flex-wrap: wrap;                             Permite que los elementos flex se vayan a otra línea. Ejemplo: flex-wrap: wrap;
+align-items: center;                         Alinea elementos verticalmente dentro de un contenedor. Ejemplo: align-items: center;
+justify-content: space-between;              Alinea elementos horizontalmente. Ejemplo: justify-content: space-between;
+gap: 1rem;                                   Establece la separación entre elementos. Ejemplo: gap: 1rem;
+grid-template-columns: repeat(2, 1fr);       Define cuántas columnas tendrá una cuadrícula. Ejemplo: grid-template-columns: repeat(2, 1fr);
+grid-template-rows: auto 1fr;                Define cuántas filas tendrá una cuadrícula. Ejemplo: grid-template-rows: auto 1fr;
+place-items: center;                         Abrevia la alineación vertical y horizontal en grid. Ejemplo: place-items: center;
+position: relative;                          Define el tipo de posicionamiento. Ejemplo: position: relative;
+position: sticky; top: 0;                    Mantiene un elemento fijo mientras se desplaza. Ejemplo: position: sticky; top: 0;
+position: absolute; top: 0; right: 0;        Posiciona el elemento respecto a su contenedor. Ejemplo: position: absolute; top: 0; right: 0;
+position: fixed; top: 90px; right: 20px;     Fija un elemento en una posición específica. Ejemplo: position: fixed; top: 90px; right: 20px;
+top: 0;                                      Define la distancia desde la parte superior. Ejemplo: top: 0;
+right: 20px;                                 Define la distancia desde la derecha. Ejemplo: right: 20px;
+bottom: 1rem;                                Define la distancia desde la parte inferior. Ejemplo: bottom: 1rem;
+left: 0;                                     Define la distancia desde la izquierda. Ejemplo: left: 0;
+z-index: 30;                                 Define el orden de capas visuales. Ejemplo: z-index: 30;
+overflow: hidden;                            Controla lo que ocurre si el contenido excede el tamaño. Ejemplo: overflow: hidden;
+object-fit: contain;                         Ajusta cómo se muestra una imagen dentro de su contenedor. Ejemplo: object-fit: contain;
+
+VISUALES, FONDOS Y DECORACIÓN
+
+background: linear-gradient(135deg, #fff, #f3f4f6);       Establece el fondo del elemento. Ejemplo: background: linear-gradient(135deg, #fff, #f3f4f6);
+background: rgba(255,255,255,0.96);                         Define un fondo semitransparente. Ejemplo: background: rgba(255,255,255,0.96);
+border: 1px solid #e5e7eb;                                  Define el borde completo del elemento. Ejemplo: border: 1px solid #e5e7eb;
+border-left: 6px solid #16a34a;                             Establece el borde izquierdo. Ejemplo: border-left: 6px solid #16a34a;
+border-top: 1px solid #e5e7eb;                              Establece el borde superior. Ejemplo: border-top: 1px solid #e5e7eb;
+border-bottom: 1px solid #e5e7eb;                           Establece el borde inferior. Ejemplo: border-bottom: 1px solid #e5e7eb;
+border-radius: 24px;                                          Redondea las esquinas. Ejemplo: border-radius: 24px;
+box-shadow: 0 18px 40px rgba(15,23,42,0.08);                Añade sombra alrededor del elemento. Ejemplo: box-shadow: 0 18px 40px rgba(15,23,42,0.08);
+opacity: 0;                                                   Define la transparencia del elemento. Ejemplo: opacity: 0;
+backdrop-filter: blur(8px);                                   Aplica un efecto borroso detrás del elemento. Ejemplo: backdrop-filter: blur(8px);
+transform: translateY(-8px);                                  Aplica transformaciones visuales. Ejemplo: transform: translateY(-8px);
+transition: opacity 0.25s ease, transform 0.25s ease;         Añade animaciones suaves. Ejemplo: transition: opacity 0.25s ease, transform 0.25s ease;
+cursor: pointer;                                              Cambia el tipo de cursor al pasar sobre un elemento. Ejemplo: cursor: pointer;
+pointer-events: none;                                         Controla si el elemento puede recibir eventos. Ejemplo: pointer-events: none;
+
+FORMULARIOS Y TABLAS
+
+border-collapse: collapse;        Define si los bordes de una tabla se combinan. Ejemplo: border-collapse: collapse;
+resize: vertical;                 Permite cambiar el tamaño de áreas de texto. Ejemplo: resize: vertical;
+text-indent: 1rem;                Define la sangría de la primera línea de texto. Ejemplo: text-indent: 1rem;
+
+INTERACCIÓN Y RESPONSIVE
+
+@media (max-width: 900px) { ... }           Aplica estilos distintos según el tamaño de la pantalla. Ejemplo: @media (max-width: 900px) { ... };
+list-style: none;                           Define el estilo de las listas. Ejemplo: list-style: none;
+visibility: hidden;                         Controla si el elemento es visible o no. Ejemplo: visibility: hidden;
+
+NOTA
+
+Este archivo está ordenado por categorías y cada línea incluye la propiedad, su explicación y un ejemplo de llenado para estudiar y practicar.

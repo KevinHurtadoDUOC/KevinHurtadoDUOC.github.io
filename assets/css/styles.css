@@ -1,3 +1,8 @@
+/*
+  Aquí se definen los colores y tamaños principales del sitio.
+  Es como la "paleta" que usa toda la página para verse ordenada.
+  Si cambias estos valores, todo el sitio podría verse más claro, más oscuro o más grande. 
+*/
 :root {
   --primary: #f59e0b;
   --primary-dark: #d97706;
@@ -13,6 +18,10 @@
   --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
 }
 
+/*
+  Aquí se ponen algunas reglas básicas para que todo se vea bien
+  desde el inicio y no cambie mucho entre navegadores.
+*/
 * {
   box-sizing: border-box;
 }
@@ -50,6 +59,10 @@ textarea {
   margin: 0 auto;
 }
 
+/*
+  Este bloque hace que la parte de arriba de la página se vea bonita.
+  Aquí están el logo, el menú y los botones para ir al carrito o iniciar sesión.
+*/
 .site-header {
   position: sticky;
   top: 0;
@@ -59,6 +72,10 @@ textarea {
   border-bottom: 1px solid var(--border);
 }
 
+/*
+  nav-wrap: organiza el contenido del header en una fila con espacio entre los elementos.
+  Esto hace que el logo, el menú y los botones queden alineados y ordenados.
+*/
 .nav-wrap {
   display: flex;
   align-items: center;
@@ -67,12 +84,20 @@ textarea {
   min-height: 80px;
 }
 
+/*
+  brand: crea el bloque del logo y el nombre de la empresa.
+  Aquí se junta el símbolo EV con el texto de marca para formar el identificador visual.
+*/
 .brand {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
+/*
+  brand-mark: dibuja el cuadrado con la letra EV.
+  Esta clase le da el color amarillo y la forma redondeada para que el logo se vea destacado.
+*/
 .brand-mark {
   width: 46px;
   height: 46px;
@@ -85,6 +110,10 @@ textarea {
   box-shadow: var(--shadow);
 }
 
+/*
+  brand-text: organiza el texto del logo en una columna.
+  Esto hace que el nombre de la empresa se vea ordenado, con el subtítulo arriba y el nombre fuerte abajo.
+*/
 .brand-text {
   display: flex;
   flex-direction: column;
@@ -96,6 +125,10 @@ textarea {
   color: var(--muted);
 }
 
+/*
+  main-nav: crea el menú principal de navegación.
+  Con display flex, los enlaces quedan en línea y con espacio entre ellos.
+*/
 .main-nav {
   display: flex;
   align-items: center;
@@ -103,16 +136,28 @@ textarea {
   font-weight: 600;
 }
 
+/*
+  main-nav a: cambia el color y la apariencia de cada enlace del menú.
+  Esto hace que los links se vean claros y fáciles de identificar.
+*/
 .main-nav a {
   color: var(--accent-soft);
 }
 
+/*
+  nav-actions: agrupa los botones de la derecha del header.
+  Aquí se colocan el carrito, iniciar sesión y registrarse para que queden alineados.
+*/
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
+/*
+  user-badge: crea la etiqueta visual que muestra el nombre del usuario logueado.
+  Esta clase da fondo amarillo suave, borde y texto oscuro para que se vea como una insignia.
+*/
 .user-badge {
   display: inline-flex;
   align-items: center;
@@ -130,6 +175,11 @@ textarea {
   white-space: nowrap;
 }
 
+/*
+  Este bloque sirve para los mensajes que aparecen en pantalla.
+  Por ejemplo, cuando agregas un producto o cuando ocurre un error.
+  Gracias a esto, el usuario recibe una respuesta visual y sabe qué pasó. 
+*/
 .inline-notice-container {
   position: fixed;
   top: 90px;
@@ -206,6 +256,10 @@ textarea {
   color: var(--accent-soft);
 }
 
+/*
+  cart-link: da estilo al botón circular del carrito.
+  La posición relativa sirve para colocar el contador encima del icono.
+*/
 .cart-link {
   position: relative;
   display: inline-flex;
@@ -218,10 +272,17 @@ textarea {
   background: var(--secondary);
 }
 
+/*
+  cart-icon: aumenta el tamaño del emoji del carrito para que se vea más visible.
+*/
 .cart-icon {
   font-size: 1.3rem;
 }
 
+/*
+  cart-count: hace que el número del carrito se vea como una burbuja encima del ícono.
+  Se coloca en la esquina superior derecha para indicar cuántos productos hay agregados.
+*/
 .cart-count {
   position: absolute;
   top: -6px;
@@ -237,6 +298,10 @@ textarea {
   font-weight: 700;
 }
 
+/*
+  btn: define el estilo base de todos los botones.
+  Con esto se consigue que todos tengan tamaño, color y forma parecida.
+*/
 .btn {
   display: inline-flex;
   align-items: center;
@@ -253,28 +318,48 @@ textarea {
   transform: translateY(-1px);
 }
 
+/*
+  btn-primary: es el botón principal de acción.
+  Tiene un fondo amarillo degradado y sombra para destacar más que los demás.
+*/
 .btn-primary {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: var(--light);
   box-shadow: 0 14px 24px rgba(245, 158, 11, 0.3);
 }
 
+/*
+  btn-secondary: es el botón de acción secundaria.
+  Tiene fondo gris claro para que no competir tanto visualmente con el botón principal.
+*/
 .btn-secondary {
   background: var(--secondary);
   color: var(--accent);
 }
 
+/*
+  btn-light: es un botón claro para acciones menos importantes.
+  Tiene fondo blanco y borde suave para que se vea limpio y neutral.
+*/
 .btn-light {
   background: var(--light);
   color: var(--accent);
   border: 1px solid var(--border);
 }
 
+/*
+  hero: crea la sección de bienvenida grande.
+  Este bloque usa un fondo suave y mucho espacio para llamar la atención al entrar a la página.
+*/
 .hero {
   padding: 4.5rem 0 3rem;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 247, 237, 0.9));
 }
 
+/*
+  hero-grid: hace que la parte izquierda y la parte derecha del hero queden en dos columnas.
+  Es decir, el texto y la imagen visual se distribuyen de forma ordenada.
+*/
 .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -282,6 +367,10 @@ textarea {
   gap: 2rem;
 }
 
+/*
+  eyebrow: es el texto pequeño con fondo amarillo claro que aparece encima de títulos importantes.
+  Su función es señalar una categoría o un detalle visual rápido.
+*/
 .eyebrow {
   display: inline-block;
   margin-bottom: 0.9rem;
@@ -323,6 +412,10 @@ textarea {
   margin: 2rem 0 1.5rem;
 }
 
+/*
+  hero-features: organiza los beneficios del sitio en una lista horizontal.
+  Esto ayuda a presentar las ventajas de forma rápida y visual.
+*/
 .hero-features {
   list-style: none;
   padding: 0;
@@ -333,6 +426,10 @@ textarea {
   color: var(--muted);
 }
 
+/*
+  hero-features li::before: agrega el símbolo ✓ antes de cada beneficio.
+  Esto hace que la lista sea más clara y agradable de leer.
+*/
 .hero-features li::before {
   content: "✓";
   color: var(--success);
@@ -346,6 +443,10 @@ textarea {
   gap: 1rem;
 }
 
+/*
+  visual-card: da estilo a las tarjetas de contenido visual dentro del hero.
+  Añade redondeo, sombra y fondo oscuro para que se destaquen.
+*/
 .visual-card {
   border-radius: 24px;
   padding: 1.5rem;
@@ -354,6 +455,10 @@ textarea {
   box-shadow: var(--shadow);
 }
 
+/*
+  visual-card-large: hace que una tarjeta ocupe dos columnas del grid del hero.
+  Esto permite usar una tarjeta más grande para destacar un producto principal.
+*/
 .visual-card-large {
   grid-column: span 2;
   min-height: 260px;
@@ -363,6 +468,10 @@ textarea {
   justify-content: flex-end;
 }
 
+/*
+  card-badge: crea la etiqueta tipo "Oferta" o "Nuevo".
+  Se usa para resaltar un detalle rápido dentro de una tarjeta.
+*/
 .card-badge {
   display: inline-flex;
   align-self: flex-start;
@@ -373,6 +482,10 @@ textarea {
   font-weight: 700;
 }
 
+/*
+  visual-card-small: hace una tarjeta de menor tamaño con fondo amarillo claro.
+  Se usa para destacar una oferta o un producto secundario.
+*/
 .visual-card-small {
   background: linear-gradient(160deg, #fef3c7, #fcd34d);
   color: var(--accent);
@@ -388,6 +501,10 @@ textarea {
   display: grid;
 }
 
+/*
+  Este bloque crea espacio entre una sección y otra.
+  Así la página no se ve amontonada y cada parte se distingue mejor.
+*/
 .featured-section,
 .catalog-section,
 .about-section,
@@ -408,12 +525,20 @@ textarea {
   color: var(--primary-dark);
 }
 
+/*
+  product-grid: crea el tablero donde se muestran todos los productos.
+  Con grid y auto-fit, el sitio acomoda tarjetas automáticamente según el ancho de la pantalla.
+*/
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
+/*
+  product-card: es la tarjeta individual de cada producto.
+  Tiene fondo blanco, borde y sombra para que cada artículo se vea como una caja separada.
+*/
 .product-card {
   background: var(--light);
   border: 1px solid var(--border);
@@ -422,6 +547,10 @@ textarea {
   box-shadow: var(--shadow);
 }
 
+/*
+  product-image: define el espacio donde va la imagen del producto.
+  Aquí se centra la foto y se da un fondo gris claro para que se vea ordenado.
+*/
 .product-image {
   height: 240px;
   background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
@@ -441,10 +570,18 @@ textarea {
   image-rendering: auto;
 }
 
+/*
+  product-body: es el área de contenido dentro de cada tarjeta.
+  Aquí van el nombre, el precio y los botones para comprar o ver más información.
+*/
 .product-body {
   padding: 1rem;
 }
 
+/*
+  product-category: pone una etiqueta pequeña en mayúsculas para mostrar la categoría del producto.
+  Por ejemplo: "Batería", "Accesorio" o "Repuesto".
+*/
 .product-category {
   margin: 0 0 0.35rem;
   color: var(--muted);
@@ -453,17 +590,29 @@ textarea {
   letter-spacing: 0.04em;
 }
 
+/*
+  product-title: hace que el nombre del producto se vea más destacado.
+  Es el texto principal de la tarjeta y ayuda a identificar rápidamente el artículo.
+*/
 .product-title {
   margin: 0;
   font-size: 1.15rem;
 }
 
+/*
+  product-description: da estilo a la pequeña descripción del producto.
+  Se pone en un color suave para que no distraiga del nombre y del precio.
+*/
 .product-description {
   margin: 0.75rem 0 1rem;
   color: var(--muted);
   min-height: 48px;
 }
 
+/*
+  price-row: organiza el precio visible en una sola línea.
+  Sirve para mostrar el precio actual y el precio anterior si existe descuento.
+*/
 .price-row {
   display: flex;
   align-items: baseline;
@@ -471,23 +620,39 @@ textarea {
   margin-bottom: 0.75rem;
 }
 
+/*
+  price-current: da más peso visual al precio actual.
+  Esto hace que el cliente note rápidamente cuánto cuesta el producto.
+*/
 .price-current {
   font-size: 1.4rem;
   font-weight: 800;
   color: var(--text);
 }
 
+/*
+  price-old: pinta el precio anterior con una raya para indicar que ya no aplica.
+  Es una forma fácil de mostrar descuentos o promociones.
+*/
 .price-old {
   color: var(--muted);
   text-decoration: line-through;
 }
 
+/*
+  stock-meta: muestra información adicional como disponibilidad o stock.
+  Ayuda al usuario a saber si el artículo está listo para comprar.
+*/
 .stock-meta {
   margin-bottom: 1rem;
   color: var(--muted);
   font-size: 0.9rem;
 }
 
+/*
+  product-actions: organiza los botones de cada tarjeta, como ver detalle o agregar al carrito.
+  Con flex, ambos botones quedan del mismo ancho y alineados.
+*/
 .product-actions {
   display: flex;
   gap: 0.75rem;
@@ -499,6 +664,11 @@ textarea {
   padding-bottom: 0.75rem;
 }
 
+/*
+  Este bloque sirve para poner textos y elementos en columnas.
+  Así la información se ve ordenada y más fácil de leer.
+  Si se quitara, la página se vería más desordenada y menos clara. 
+*/
 .about-grid,
 .contact-grid,
 .footer-grid,
@@ -507,18 +677,30 @@ textarea {
   gap: 2rem;
 }
 
+/*
+  about-copy p: da estilo al texto de la sección "Sobre nosotros".
+  El color suave y el interlineado hacen que sea más fácil de leer.
+*/
 .about-copy p {
   color: var(--accent-soft);
   font-size: 1rem;
   line-height: 1.7;
 }
 
+/*
+  about-stats: crea una fila de cajas con números o datos importantes.
+  Esto sirve para resaltar cifras como años de experiencia o clientes atendidos.
+*/
 .about-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
 
+/*
+  stat-box: es una caja pequeña para datos importantes.
+  Se usa para mostrar números grandes con un estilo limpio y profesional.
+*/
 .stat-box {
   background: var(--light);
   border: 1px solid var(--border);
@@ -536,6 +718,10 @@ textarea {
   color: var(--primary-dark);
 }
 
+/*
+  Estas clases comparten un estilo base para las cajas principales del sitio.
+  Todas tienen fondo blanco, borde suave y sombra para que se vean como tarjetas claras y ordenadas.
+*/
 .contact-form-wrap,
 .map-card,
 .auth-card,
@@ -547,25 +733,45 @@ textarea {
   box-shadow: var(--shadow);
 }
 
+/*
+  contact-form-wrap: es el contenedor del formulario de contacto.
+  Añade espacio interno para que los campos no queden pegados a los bordes.
+*/
 .contact-form-wrap {
   padding: 2rem;
 }
 
+/*
+  contact-form: organiza los campos del formulario en una columna vertical.
+  Así cada campo aparece debajo del anterior y se siente más fácil de completar.
+*/
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+/*
+  form-row: sirve para agrupar dos campos juntos en una fila.
+  Si quieres poner nombre y apellido en la misma línea, esta clase ayuda a hacerlo.
+*/
 .form-row {
   display: grid;
   gap: 1rem;
 }
 
+/*
+  two-columns: divide un bloque en dos columnas iguales.
+  Es útil para formularios, listas y secciones de contenido.
+*/
 .two-columns {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/*
+  label: da estilo a los títulos de cada campo del formulario.
+  Hace que el texto del campo se vea claro y organizado encima del cuadro de entrada.
+*/
 label {
   display: flex;
   flex-direction: column;
@@ -574,6 +780,10 @@ label {
   color: var(--accent-soft);
 }
 
+/*
+  input, select, textarea: definen el estilo común de los campos de texto.
+  Con esto todos se ven iguales y mantienen una apariencia consistente en toda la página.
+*/
 input,
 select,
 textarea {
@@ -589,6 +799,10 @@ textarea {
   resize: vertical;
 }
 
+/*
+  map-card: crea el espacio para mostrar el mapa.
+  El overflow hidden evita que el contenido se salga fuera de la tarjeta.
+*/
 .map-card {
   overflow: hidden;
   min-height: 100%;
@@ -600,12 +814,21 @@ textarea {
   border: 0;
 }
 
+/*
+  Aquí se diseña el final de la página.
+  Se usa para poner información de contacto y los datos de la empresa.
+  El fondo oscuro ayuda a separar este bloque del resto del contenido.
+*/
 .site-footer {
   background: #111827;
   color: rgba(255, 255, 255, 0.87);
   padding-top: 2.5rem;
 }
 
+/*
+  footer-grid: organiza las columnas del pie de página.
+  Una columna más grande se usa para la marca y las otras dos para enlaces de ayuda.
+*/
 .footer-grid {
   grid-template-columns: 1.4fr 1fr 1fr;
   gap: 2rem;
@@ -616,6 +839,10 @@ textarea {
   margin-top: 0;
 }
 
+/*
+  site-footer ul: elimina los puntos de las listas y las coloca verticalmente con espacio.
+  Esto hace que los enlaces del pie de página se vean ordenados y limpios.
+*/
 .site-footer ul {
   list-style: none;
   padding: 0;
@@ -624,6 +851,10 @@ textarea {
   gap: 0.45rem;
 }
 
+/*
+  footer-bottom: crea la línea final del pie de página.
+  Aquí se pone el texto pequeño con fondo oscuro y una línea superior para separar el segmento final.
+*/
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding: 1rem 0;
@@ -631,28 +862,52 @@ textarea {
   color: rgba(255, 255, 255, 0.75);
 }
 
+/*
+  Este bloque se usa en páginas pequeñas como catálogo y carrito.
+  Da un encabezado bonito para que cada página se sienta distinta.
+  El fondo suave hace que el título se destaque sin ser pesado.
+*/
 .page-hero {
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(255, 255, 255, 0.6));
   padding: 3rem 0;
 }
 
+/*
+  catalog-filters: agrega espacio arriba de los filtros del catálogo.
+  Esto separa la zona de filtros del contenido principal.
+*/
 .catalog-filters {
   padding: 1.5rem 0 0;
 }
 
+/*
+  filters-wrap: organiza los filtros en dos columnas para que sean visibles y ordenados.
+*/
 .filters-wrap {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
+/*
+  filter-card: crea una tarjeta que contiene un filtro o un campo de búsqueda.
+  Se ve como un bloque independiente con espacio interno y borde.
+*/
 .filter-card {
   padding: 1rem;
 }
 
+/*
+  product-detail-grid: organiza la parte de detalle del producto en dos columnas.
+  A la izquierda va la imagen y a la derecha la información.
+*/
 .product-detail-grid {
   align-items: center;
 }
 
+/*
+  detail-image: crea el contenedor de la imagen grande del producto.
+  Tiene fondo claro, borde y centro para que la foto se vea limpia y profesional.
+*/
 .detail-image {
   background: linear-gradient(135deg, #ffffff, #f8fafc);
   border: 1px solid var(--border);
@@ -676,6 +931,10 @@ textarea {
   background: linear-gradient(180deg, #ffffff, #f3f4f6);
 }
 
+/*
+  detail-copy: es el bloque con toda la información del producto.
+  Aquí se muestra el nombre, la descripción, el precio y los botones de acción.
+*/
 .detail-copy {
   background: var(--light);
   border: 1px solid var(--border);
@@ -690,6 +949,10 @@ textarea {
   font-size: clamp(1.8rem, 2vw, 2.6rem);
 }
 
+/*
+  detail-price: organiza el precio del producto en detalle.
+  Sirve para mostrar el valor principal con el mismo estilo que en las tarjetas.
+*/
 .detail-price {
   display: flex;
   align-items: baseline;
@@ -701,6 +964,10 @@ textarea {
   font-size: 2rem;
 }
 
+/*
+  detail-meta: muestra datos secundarios del producto como categoría, marca o disponibilidad.
+  Se acomoda con flex-wrap para que no se desordene si el contenido es largo.
+*/
 .detail-meta {
   display: flex;
   flex-wrap: wrap;
@@ -709,31 +976,56 @@ textarea {
   color: var(--muted);
 }
 
+/*
+  back-link: es el enlace para volver a la página anterior.
+  Su estilo lo deja visible, pero no tan fuerte como un botón principal.
+*/
 .back-link {
   margin-bottom: 1.5rem;
   display: inline-flex;
 }
 
+/*
+  Este bloque es para los formularios de iniciar sesión y crear cuenta.
+  Hace que se vean bonitos y ordenados para escribir los datos.
+  Si se quitara, los formularios se verían menos claros y sería más difícil completar la información. 
+*/
 .auth-section {
   min-height: calc(100vh - 80px);
   display: grid;
   place-items: center;
 }
 
+/*
+  auth-shell: centra el formulario en el centro de la pantalla.
+  Con width min(760px, 100%), se adapta tanto en desktop como en móvil.
+*/
 .auth-shell {
   width: min(760px, 100%);
 }
 
+/*
+  auth-card: es la caja principal del formulario de acceso o registro.
+  Aquí se guarda el contenido del formulario y se le da un aspecto limpio.
+*/
 .auth-card {
   padding: 2rem;
 }
 
+/*
+  auth-form: organiza todos los campos del formulario en una columna vertical.
+  Esto hace que el usuario avance de arriba a abajo sin confundirse.
+*/
 .auth-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+/*
+  checkbox-wrap: hace que el checkbox y su texto queden en una línea horizontal.
+  Esto ayuda a que la opción de aceptar términos se vea más natural.
+*/
 .checkbox-wrap {
   flex-direction: row !important;
   align-items: center;
@@ -748,6 +1040,10 @@ textarea {
   width: 100%;
 }
 
+/*
+  auth-link: centra el texto que lleva a crear una cuenta o iniciar sesión.
+  Su color suave indica que es un enlace secundario.
+*/
 .auth-link {
   text-align: center;
   color: var(--muted);
@@ -758,6 +1054,10 @@ textarea {
   font-weight: 700;
 }
 
+/*
+  Aquí se diseña la página del carrito.
+  A la izquierda se ven los productos y a la derecha el resumen del total.
+*/
 .cart-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -871,6 +1171,10 @@ textarea {
   color: var(--muted);
 }
 
+/*
+  Este bloque hace que la página se vea bien en celulares y tabletas.
+  Cuando la pantalla es pequeña, todo se acomoda para no romperse.
+*/
 @media (max-width: 900px) {
   .nav-wrap {
     flex-wrap: wrap;
